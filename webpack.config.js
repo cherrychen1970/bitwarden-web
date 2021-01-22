@@ -140,10 +140,13 @@ if (ENV === 'production') {
 // ref: https://webpack.js.org/configuration/dev-server/#devserver
 let certSuffix = fs.existsSync('dev-server.local.pem') ? '.local' : '.shared';
 const devServer = {
+    /*
     https: {
         key: fs.readFileSync('dev-server' + certSuffix + '.pem'),
         cert: fs.readFileSync('dev-server' + certSuffix + '.pem'),
     },
+    */
+   
     // host: '192.168.1.9',
     hot: false,
 };
