@@ -16,10 +16,10 @@
                     <a routerLink="subscription" class="list-group-item" routerLinkActive="active" *ngIf="premium">
                         {{'premiumMembership' | i18n}}
                     </a>
-                    <a routerLink="premium" class="list-group-item" routerLinkActive="active" *ngIf="!premium">
+                    <a routerLink="premium" class="list-group-item" routerLinkActive="active" *ngIf="!premium && false">
                         {{'goPremium' | i18n}}
                     </a>
-                    <a routerLink="billing" class="list-group-item" routerLinkActive="active" *ngIf="!selfHosted">
+                    <a routerLink="billing" class="list-group-item" routerLinkActive="active" *ngIf="!selfHosted && false">
                         {{'billing' | i18n}}
                     </a>
                     <a routerLink="two-factor" class="list-group-item" routerLinkActive="active">

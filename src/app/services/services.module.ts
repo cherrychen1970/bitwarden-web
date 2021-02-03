@@ -154,7 +154,7 @@ export function initFactory(): Function {
         apiService.setUrls({
             base: isDev ? null : window.location.origin,
             api: isDev ? 'http://localhost:4000' : null,
-            identity: isDev ? 'http://localhost:4000' : null,//33656
+            identity: isDev ? 'http://localhost:33656' : null,//33656
             events: isDev ? 'http://localhost:46273' : null,
 
             // Uncomment these (and comment out the above) if you want to target production

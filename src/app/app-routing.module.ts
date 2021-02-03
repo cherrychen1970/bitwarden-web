@@ -176,8 +176,8 @@ const routes: Routes = [
                     { path: 'options', component: OptionsComponent, data: { titleId: 'options' } },
                     { path: 'domain-rules', component: DomainRulesComponent, data: { titleId: 'domainRules' } },
                     { path: 'two-factor', component: TwoFactorSetupComponent, data: { titleId: 'twoStepLogin' } },
-                    { path: 'premium', component: PremiumComponent, data: { titleId: 'goPremium' } },
-                    { path: 'billing', component: UserBillingComponent, data: { titleId: 'billing' } },
+                    //{ path: 'premium', component: PremiumComponent, data: { titleId: 'goPremium' } },
+                    //{ path: 'billing', component: UserBillingComponent, data: { titleId: 'billing' } },
                     {
                         path: 'subscription',
                         component: UserSubscriptionComponent,
