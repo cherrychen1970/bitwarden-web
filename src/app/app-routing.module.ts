@@ -101,7 +101,12 @@ const routes: Routes = [
         path: '',
         component: FrontendLayoutComponent,
         children: [
-            { path: '', pathMatch: 'full', component: LoginComponent, canActivate: [UnauthGuardService] },
+            {
+                path: 'login',
+                pathMatch: 'full', 
+                component: LoginComponent, 
+                canActivate: [UnauthGuardService]
+            },
             { path: '2fa', component: TwoFactorComponent, canActivate: [UnauthGuardService] },
             {
                 path: 'register', component: RegisterComponent,
@@ -109,7 +114,8 @@ const routes: Routes = [
                 data: { titleId: 'createAccount' },
             },
             {
-                path: 'sso', component: SsoComponent,
+                path: '', component: SsoComponent,
+                pathMatch: 'full',
                 canActivate: [UnauthGuardService],
                 data: { titleId: 'enterpriseSingleSignOn' },
             },
@@ -195,12 +201,12 @@ const routes: Routes = [
                             {
                                 path: '',
                                 component: EmergencyAccessComponent,
-                                data: { titleId: 'emergencyAccess'},
+                                data: { titleId: 'emergencyAccess' },
                             },
                             {
                                 path: ':id',
                                 component: EmergencyAccessViewComponent,
-                                data: { titleId: 'emergencyAccess'},
+                                data: { titleId: 'emergencyAccess' },
                             },
                         ],
                     },

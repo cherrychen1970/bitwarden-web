@@ -7,9 +7,8 @@
                     <i class="fa fa-spinner fa-spin" title="{{'loading' | i18n}}" aria-hidden="true"></i>
                     {{'loading' | i18n}}
                 </div>
-                <div class="card-body" *ngIf="!loggingIn">
-                    <p>{{'ssoLogInWithOrgIdentifier' | i18n}}</p>
-                    <div class="form-group">
+                <div class="card-body" *ngIf="!loggingIn">                    
+                    <div class="form-group" *ngIf="false">
                         <label for="identifier">{{'organizationIdentifier' | i18n}}</label>
                         <input id="identifier" class="form-control" type="text" name="Identifier"
                             [(ngModel)]="identifier" required appAutofocus>
