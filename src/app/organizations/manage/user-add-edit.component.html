@@ -63,14 +63,6 @@
                         <small>{{'ownerDesc' | i18n}}</small>
                     </label>
                 </div>
-                <div class="form-check mt-2 form-check-block">
-                    <input class="form-check-input" type="radio" name="userType" id="userTypeCustom"
-                        [value]="organizationUserType.Custom" [(ngModel)]="type">
-                    <label class="form-check-label" for="userTypeCustom">
-                        {{'custom' | i18n}}
-                        <small>{{'customDesc' | i18n}}</small>
-                    </label>
-                </div>
                 <ng-container *ngIf="customUserTypeSelected">
                     <h3 class="mt-4 d-flex">
                         {{'permissions' | i18n}}
@@ -182,39 +174,6 @@
                         </div>
                     </div>
                 </ng-container>
-                <h3 class="mt-4 d-flex">
-                    <div class="mb-3">
-                        {{'accessControl' | i18n}}
-                        <a target="_blank" rel="noopener" appA11yTitle="{{'learnMore' | i18n}}"
-                            href="https://bitwarden.com/help/article/user-types-access-control/#access-control">
-                            <i class="fa fa-question-circle-o" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <div class="ml-auto" *ngIf="access === 'selected' && collections && collections.length">
-                        <button type="button" (click)="selectAll(true)" class="btn btn-link btn-sm py-0">
-                            {{'selectAll' | i18n}}
-                        </button>
-                        <button type="button" (click)="selectAll(false)" class="btn btn-link btn-sm py-0">
-                            {{'unselectAll' | i18n}}
-                        </button>
-                    </div>
-                </h3>
-                <div class="form-group" [ngClass]="{'mb-0': access !== 'selected'}">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="access" id="accessAll" value="all"
-                            [(ngModel)]="access">
-                        <label class="form-check-label" for="accessAll">
-                            {{'userAccessAllItems' | i18n}}
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="access" id="accessSelected" value="selected"
-                            [(ngModel)]="access">
-                        <label class="form-check-label" for="accessSelected">
-                            {{'userAccessSelectedCollections' | i18n}}
-                        </label>
-                    </div>
-                </div>
                 <ng-container *ngIf="access === 'selected'">
                     <div *ngIf="!collections || !collections.length">
                         {{'noCollectionsInList' | i18n}}
