@@ -43,9 +43,10 @@ export class CollectionsComponent extends BaseCollectionsComponent {
     }
 
     protected loadCollections() {
+        /*
         if (!this.organization.canManageAllCollections) {
             return super.loadCollections();
-        }
+        }*/
         return Promise.resolve(this.collections);
     }
 

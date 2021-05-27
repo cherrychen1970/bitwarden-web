@@ -1,4 +1,4 @@
-﻿import * as DuoWebSDK from 'duo_web_sdk';
+﻿//import * as DuoWebSDK from 'duo_web_sdk';
 
 // tslint:disable-next-line
 require('./duo.scss');
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const hostParam = getQsParam('host');
     const requestParam = getQsParam('request');
+    /*
     DuoWebSDK.init({
         iframe: 'duo_iframe',
         host: hostParam,
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             invokeCSCode(form.elements.sig_response.value);
         },
     });
+    */
 
     window.onresize = setFrameHeight;
 
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         frameElement.style.height = window.innerHeight + 'px';
     }
 });
-
+/*
 function getQsParam(name: string) {
     const url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -42,7 +44,7 @@ function getQsParam(name: string) {
 
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
+*/
 function invokeCSCode(data: string) {
     try {
         (window as any).invokeCSharpAction(data);

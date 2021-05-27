@@ -39,6 +39,8 @@ export class CollectionAddEditComponent implements OnInit {
     title: string;
     name: string;
     externalId: string;
+    adminOnly:boolean = false;
+    cars:string[]=['ford'];
     groups: GroupResponse[] = [];
     formPromise: Promise<any>;
     deletePromise: Promise<any>;
@@ -114,6 +116,7 @@ export class CollectionAddEditComponent implements OnInit {
         const request = new CollectionRequest();
         request.name = (await this.cryptoService.encrypt(this.name, this.orgKey)).encryptedString;
         request.externalId = this.externalId;
+        request.adminOnly = this.adminOnly;
         request.groups = this.groups.filter((g) => (g as any).checked && !g.accessAll)
             .map((g) => new SelectionReadOnlyRequest(g.id, !!(g as any).readOnly, !!(g as any).hidePasswords));
 

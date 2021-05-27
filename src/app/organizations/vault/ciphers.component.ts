@@ -42,10 +42,12 @@ export class CiphersComponent extends BaseCiphersComponent {
     }
 
     async load(filter: (cipher: CipherView) => boolean = null) {
+        /*
         if (!this.organization.canManageAllCollections) {
             await super.load(filter, this.deleted);
             return;
         }
+        */
         this.accessEvents = this.organization.useEvents;
         this.allCiphers = await this.cipherService.getAllFromApiForOrganization(this.organization.id);
         this.applyFilter(filter);
@@ -62,9 +64,10 @@ export class CiphersComponent extends BaseCiphersComponent {
     }
 
     async search(timeout: number = null) {
+        /*
         if (!this.organization.canManageAllCollections) {
             return super.search(timeout);
-        }
+        }*/
         this.searchPending = false;
         let filteredCiphers = this.allCiphers;
 

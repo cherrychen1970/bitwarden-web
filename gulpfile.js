@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const googleWebFonts = require('gulp-google-webfonts');
+//const googleWebFonts = require('../');
 const del = require('del');
 const package = require('./package.json');
 const fs = require('fs');
@@ -9,6 +10,7 @@ const paths = {
     src: './src/',
     build: './build/',
     cssDir: './src/css/',
+    fontsDir: 'googlefonts/',
 };
 
 function clean() {
@@ -16,6 +18,7 @@ function clean() {
 }
 
 function webfonts() {
+    return googleWebFonts;
     return gulp.src('./webfonts.list')
         .pipe(googleWebFonts({
             fontsDir: 'webfonts',

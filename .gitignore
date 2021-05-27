@@ -12,3 +12,5 @@ dist/
 build/
 !dev-server.shared.pem
 package-lock.json
+package-lock.json
+package-lock.json

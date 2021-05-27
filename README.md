@@ -63,6 +63,6 @@ Code contributions are welcome! Please commit any pull requests against the `mas
 
 Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature. You can read our security policy in the [`SECURITY.md`](SECURITY.md) file.
 
-## My Note
+## Test Only
 cherry@gmail.com
 JQAHttW34ngM87Y

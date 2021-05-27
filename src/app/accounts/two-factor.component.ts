@@ -10,7 +10,7 @@ import {
     Router,
 } from '@angular/router';
 
-import { TwoFactorOptionsComponent } from './two-factor-options.component';
+//import { TwoFactorOptionsComponent } from './two-factor-options.component';
 
 import { ModalComponent } from '../modal.component';
 
@@ -42,7 +42,9 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             stateService, storageService, route);
         this.onSuccessfulLoginNavigate = this.goAfterLogIn;
     }
-
+    anotherMethod() {
+    }
+/*
     anotherMethod() {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         const modal = this.twoFactorOptionsModal.createComponent(factory).instance;
@@ -58,7 +60,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             modal.close();
         });
     }
-
+*/
     async goAfterLogIn() {
         const orgInvite = await this.stateService.get<any>('orgInvitation');
         const emergencyInvite = await this.stateService.get<any>('emergencyInvitation');

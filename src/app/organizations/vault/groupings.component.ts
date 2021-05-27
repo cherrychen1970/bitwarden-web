@@ -29,10 +29,12 @@ export class GroupingsComponent extends BaseGroupingsComponent {
     }
 
     async loadCollections() {
+        /*
         if (!this.organization.canManageAllCollections) {
             await super.loadCollections(this.organization.id);
             return;
         }
+        */
 
         const collections = await this.apiService.getCollections(this.organization.id);
         if (collections != null && collections.data != null && collections.data.length) {
