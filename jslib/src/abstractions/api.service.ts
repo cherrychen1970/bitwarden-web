@@ -183,11 +183,10 @@ export abstract class ApiService {
     deleteSend: (id: string) => Promise<any>;
 
     getCipher: (id: string) => Promise<CipherResponse>;
-    getCipherAdmin: (id: string) => Promise<CipherResponse>;
+    getCipherAdmin: (organizationId:string, id: string) => Promise<CipherResponse>;
     getCiphersOrganization: (organizationId: string) => Promise<ListResponse<CipherResponse>>;
     postCipher: (request: CipherRequest) => Promise<CipherResponse>;
-    postCipherCreate: (request: CipherCreateRequest) => Promise<CipherResponse>;
-    postCipherAdmin: (request: CipherCreateRequest) => Promise<CipherResponse>;
+    postOrganizationCipher: (organizationId:string, request: CipherRequest) => Promise<CipherResponse>;
     putCipher: (id: string, request: CipherRequest) => Promise<CipherResponse>;
     putCipherAdmin: (id: string, request: CipherRequest) => Promise<CipherResponse>;
     deleteCipher: (id: string) => Promise<any>;

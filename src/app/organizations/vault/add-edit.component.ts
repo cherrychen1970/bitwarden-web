@@ -65,7 +65,7 @@ export class AddEditComponent extends BaseAddEditComponent {
         if (!this.organization.canManageAllCollections) {
             return await super.loadCipher();
         }
-        const response = await this.apiService.getCipherAdmin(this.cipherId);
+        const response = await this.apiService.getCipherAdmin(this.organization.id, this.cipherId);
         const data = new CipherData(response);
         this.originalCipher = new Cipher(data);
         return new Cipher(data);
@@ -86,8 +86,8 @@ export class AddEditComponent extends BaseAddEditComponent {
             const request = new CipherRequest(cipher);
             return this.apiService.putCipherAdmin(this.cipherId, request);
         } else {
-            const request = new CipherCreateRequest(cipher);
-            return this.apiService.postCipherAdmin(request);
+            const request = new CipherRequest(cipher);
+            return this.apiService.postOrganizationCipher(this.organization.id, request);
         }
     }
 

@@ -18,6 +18,7 @@ import { SymmetricCryptoKey } from './symmetricCryptoKey';
 export class Cipher extends Domain {
     id: string;
     organizationId: string;
+    collectionId: string;
     folderId: string;
     name: CipherString;
     notes: CipherString;

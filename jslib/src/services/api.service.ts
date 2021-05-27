@@ -451,14 +451,14 @@ export class ApiService implements ApiServiceAbstraction {
         return new CipherResponse(r);
     }
 
-    async getCipherAdmin(id: string): Promise<CipherResponse> {
-        const r = await this.send('GET', '/ciphers/' + id + '/admin', null, true, true);
+    // org ciphers
+    async getCipherAdmin(organizationId: string,id: string): Promise<CipherResponse> {
+        const r = await this.send('GET', `/organizations/${organizationId}/ciphers/${id}`, null, true, true);
         return new CipherResponse(r);
     }
 
     async getCiphersOrganization(organizationId: string): Promise<ListResponse<CipherResponse>> {
-        const r = await this.send('GET', '/ciphers/organization-details?organizationId=' + organizationId,
-            null, true, true);
+        const r = await this.send('GET', `/organizations/${organizationId}/ciphers`, null, true, true);
         return new ListResponse(r, CipherResponse);
     }
 
@@ -467,17 +467,11 @@ export class ApiService implements ApiServiceAbstraction {
         return new CipherResponse(r);
     }
 
-    async postCipherCreate(request: CipherCreateRequest): Promise<CipherResponse> {
-        const r = await this.send('POST', '/organizations/' + request.cipher.organizationId + '/ciphers',request,true, true);
-        //const r = await this.send('POST', '/ciphers/create', request, true, true);
-        return new CipherResponse(r);
-    }
-
-    async postCipherAdmin(request: CipherCreateRequest): Promise<CipherResponse> {
-        const r = await this.send('POST', '/organizations/' + request.cipher.organizationId + '/ciphers',request,true, true);
+    async postOrganizationCipher(organizationId:string, request: CipherRequest): Promise<CipherResponse> {
+        const r = await this.send('POST', '/organizations/' + organizationId + '/ciphers',request,true, true);
         //const r = await this.send('POST', '/ciphers/admin', request, true, true);
         return new CipherResponse(r);
-    }
+    } 
 
     async putCipher(id: string, request: CipherRequest): Promise<CipherResponse> {
         const r = await this.send('PUT', '/ciphers/' + id, request, true, true);

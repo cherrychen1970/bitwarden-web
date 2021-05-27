@@ -31,7 +31,7 @@ export class CollectionsComponent extends BaseCollectionsComponent {
         if (!this.organization.canManageAllCollections) {
             return await super.loadCipher();
         }
-        const response = await this.apiService.getCipherAdmin(this.cipherId);
+        const response = await this.apiService.getCipherAdmin(this.organization.id, this.cipherId);
         return new Cipher(new CipherData(response));
     }
 

@@ -16,6 +16,7 @@ export class CipherRequest {
     type: CipherType;
     folderId: string;
     organizationId: string;
+    collectionId: string;
     name: string;
     notes: string;
     favorite: boolean;
@@ -38,6 +39,8 @@ export class CipherRequest {
         this.notes = cipher.notes ? cipher.notes.encryptedString : null;
         this.favorite = cipher.favorite;
         this.lastKnownRevisionDate = cipher.revisionDate;
+        if (cipher.collectionIds != null && cipher.collectionIds.length > 0)
+            this.collectionId = cipher.collectionIds[0];
 
         switch (this.type) {
             case CipherType.Login:

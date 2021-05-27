@@ -535,13 +535,8 @@ export class CipherService implements CipherServiceAbstraction {
     async saveWithServer(cipher: Cipher): Promise<any> {
         let response: CipherResponse;
         if (cipher.id == null) {
-            if (cipher.collectionIds != null) {
-                const request = new CipherCreateRequest(cipher);
-                response = await this.apiService.postCipherCreate(request);
-            } else {
-                const request = new CipherRequest(cipher);
-                response = await this.apiService.postCipher(request);
-            }
+            const request = new CipherRequest(cipher);
+            response = await this.apiService.postCipher(request);
             cipher.id = response.id;
         } else {
             const request = new CipherRequest(cipher);
