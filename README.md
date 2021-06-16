@@ -18,7 +18,7 @@
     <img src="https://badges.gitter.im/bitwarden/Lobby.svg" alt="gitter chat" />
   </a>
 </p>
-
+ s
 ## Build/Run
 
 ### Requirements
